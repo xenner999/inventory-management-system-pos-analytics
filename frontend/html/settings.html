@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          var raw = localStorage.getItem("mynelle_settings");
+          var g = (raw && JSON.parse(raw).general) || {};
+          document.documentElement.setAttribute("data-theme", g.theme || "light");
+          document.documentElement.setAttribute("data-density", g.density || "comfortable");
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mynelle's Pharmacy — Settings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="settings.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <a class="brand" href="dashboard.html" aria-label="Go to dashboard">
+          <div class="brand-logo">
+            <img src="logooo.png" alt="Mynelle's Pharmacy logo" />
+          </div>
+        </a>
+
+        <nav class="side-nav" id="sideNav">
+          <a class="nav-item" href="dashboard.html" data-key="dashboard">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="9" />
+              <rect x="14" y="3" width="7" height="5" />
+              <rect x="14" y="12" width="7" height="9" />
+              <rect x="3" y="16" width="7" height="5" />
+            </svg>
+            Dashboard
+          </a>
+          <a class="nav-item" href="inventory.html" data-key="inventory">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="8" y="2" width="8" height="4" rx="1" />
+              <path d="M9 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3" />
+              <path d="M9 12h6M9 16h6" />
+            </svg>
+            Inventory
+          </a>
+          <a class="nav-item" href="sales.html" data-key="sales">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="3 17 9 11 13 15 21 6" />
+              <polyline points="14 6 21 6 21 13" />
+            </svg>
+            Sales
+          </a>
+          <a class="nav-item" href="reports.html" data-key="reports">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <path d="M9 13h6M9 17h6" />
+            </svg>
+            Reports
+          </a>
+          <a class="nav-item" href="alerts.html" data-key="alerts">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+            </svg>
+            Alerts
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          Data will populate here once a database is connected.
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main>
+        <header class="topbar">
+          <div class="search-wrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" placeholder="Search products, sales, records..." />
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-btn" aria-label="Notifications">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+              </svg>
+            </button>
+            <a class="icon-btn active" aria-label="Settings" href="settings.html">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+              </svg>
+            </a>
+            <button class="icon-btn" aria-label="Profile">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <div class="content">
+          <div class="settings-layout">
+            <nav class="settings-nav" id="settingsNav">
+              <button class="settings-tab active" data-tab="general" type="button">General</button>
+              <button class="settings-tab" data-tab="business" type="button">Business info</button>
+              <button class="settings-tab" data-tab="inventory" type="button">Inventory &amp; stock</button>
+              <button class="settings-tab" data-tab="pricing" type="button">Pricing</button>
+              <button class="settings-tab" data-tab="security" type="button">Security</button>
+              <button class="settings-tab" data-tab="data" type="button">Data</button>
+            </nav>
+
+            <div class="settings-panel">
+              <!-- General -->
+              <section class="settings-section active" data-section="general">
+                <h2>General</h2>
+                <p class="section-sub">Appearance and how the app behaves for you.</p>
+
+                <div class="settings-field">
+                  <div class="settings-field-label">
+                    <span>Theme</span>
+                    <span class="settings-field-hint">Switch between light and dark across the app.</span>
+                  </div>
+                  <div class="segmented" data-field="theme">
+                    <button type="button" class="segmented-option" data-value="light">Light</button>
+                    <button type="button" class="segmented-option" data-value="dark">Dark</button>
+                  </div>
+                </div>
+
+                <div class="settings-field">
+                  <div class="settings-field-label">
+                    <span>Table rows</span>
+                    <span class="settings-field-hint">Compact fits more rows on screen.</span>
+                  </div>
+                  <div class="segmented" data-field="density">
+                    <button type="button" class="segmented-option" data-value="comfortable">Comfortable</button>
+                    <button type="button" class="segmented-option" data-value="compact">Compact</button>
+                  </div>
+                </div>
+
+                <div class="settings-field">
+                  <div class="settings-field-label">
+                    <span>Date format</span>
+                  </div>
+                  <select class="settings-select field-narrow" id="gDateFormat">
+                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                    <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                  </select>
+                </div>
+
+                <div class="settings-field">
+                  <div class="settings-field-label">
+                    <span>Critical level notifications</span>
+                    <span class="settings-field-hint">Alert when a product hits its low-stock threshold.</span>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" id="gLowStockAlerts" />
+                    <span class="switch-track"><span class="switch-thumb"></span></span>
+                  </label>
+                </div>
+
+                <div class="settings-field">
+                  <div class="settings-field-label">
+                    <span>Expiry notifications</span>
+                    <span class="settings-field-hint">Alert when a product enters its expiry warning window.</span>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" id="gExpiryAlerts" />
+                    <span class="switch-track"><span class="switch-thumb"></span></span>
+                  </label>
+                </div>
+
+                <div class="settings-actions">
+                  <button class="btn-primary" type="button" data-save="general">Save changes</button>
+                  <span class="save-confirm" data-confirm="general">Saved</span>
+                </div>
+              </section>
+
+              <!-- Business info -->
+              <section class="settings-section" data-section="business" hidden>
+                <h2>Business info</h2>
+                <p class="section-sub">
+                  Saved and ready to appear on receipts once printing is connected.
+                </p>
+
+                <div class="settings-field stacked">
+                  <label for="bName">Pharmacy name</label>
+                  <input type="text" id="bName" class="settings-input" placeholder="e.g. Mynelle's Pharmacy" />
+                </div>
+                <div class="settings-field stacked">
+                  <label for="bAddress">Address</label>
+                  <textarea id="bAddress" class="settings-input" rows="2" placeholder="Street, city, province"></textarea>
+                </div>
+                <div class="settings-field stacked">
+                  <label for="bContact">Contact number</label>
+                  <input type="text" id="bContact" class="settings-input" placeholder="e.g. 09XX XXX XXXX" />
+                </div>
+                <div class="settings-field stacked">
+                  <label for="bLicense">License number</label>
+                  <input type="text" id="bLicense" class="settings-input" placeholder="Pharmacy license no." />
+                </div>
+
+                <div class="settings-actions">
+                  <button class="btn-primary" type="button" data-save="business">Save changes</button>
+                  <span class="save-confirm" data-confirm="business">Saved</span>
+                </div>
+              </section>
+
+              <!-- Inventory & stock -->
+              <section class="settings-section" data-section="inventory" hidden>
+                <h2>Inventory &amp; stock</h2>
+                <p class="section-sub">Defaults used across the Inventory page.</p>
+
+                <div class="settings-field">
+                  <div class="settings-field-label">
+                    <span>Default critical level</span>
+                    <span class="settings-field-hint">Flag a product for reorder at or below this many units of measurement. Products with their own critical level use that instead.</span>
+                  </div>
+                  <input type="number" id="iCriticalLevel" class="settings-input field-narrow" min="0" step="1" />
+                </div>
+
+                <div class="settings-field">
+                  <div class="settings-field-label">
+                    <span>Default critical level (packages)</span>
+                    <span class="settings-field-hint">Used for items entered by box, pack, bottle or strip — flag them at or below this many full packages remaining.</span>
+                  </div>
+                  <input type="number" id="iLowStockPackages" class="settings-input field-narrow" min="0" step="1" />
+                </div>
+
+                <div class="settings-field">
+                  <div class="settings-field-label">
+                    <span>Critical level notifications</span>
+                    <span class="settings-field-hint">Show a notification on the Dashboard and Alerts pages when stock reaches its critical level.</span>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" id="iCriticalAlerts" />
+                    <span class="switch-track"><span class="switch-thumb"></span></span>
+                  </label>
+                </div>
+
+                <div class="settings-field">
+                  <div class="settings-field-label">
+                    <span>Expiry warning window</span>
+                    <span class="settings-field-hint">Flag a product as expiring within this many days.</span>
+                  </div>
+                  <input type="number" id="iExpiryWindow" class="settings-input field-narrow" min="0" step="1" />
+                </div>
+
+                <div class="settings-field">
+                  <div class="settings-field-label">
+                    <span>Default stock entry</span>
+                    <span class="settings-field-hint">How the Add product form is pre-filled.</span>
+                  </div>
+                  <select class="settings-select field-narrow" id="iDefaultUnit">
+                    <option value="unit">Unit of measurement</option>
+                    <option value="box">Box</option>
+                    <option value="pack">Pack</option>
+                    <option value="bottle">Bottle</option>
+                    <option value="strip">Strip</option>
+                  </select>
+                </div>
+
+                <div class="settings-field">
+                  <div class="settings-field-label">
+                    <span>Require expiry on add</span>
+                    <span class="settings-field-hint">Make expiry date mandatory when adding a product.</span>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" id="iRequireExpiry" />
+                    <span class="switch-track"><span class="switch-thumb"></span></span>
+                  </label>
+                </div>
+
+                <div class="settings-field">
+                  <div class="settings-field-label"><span>Default sort order</span></div>
+                  <select class="settings-select field-narrow" id="iDefaultSort">
+                    <option value="name-asc">Name (A–Z)</option>
+                    <option value="name-desc">Name (Z–A)</option>
+                    <option value="stock-asc">Stock (low to high)</option>
+                    <option value="expiry-soonest">Expiry (soonest first)</option>
+                  </select>
+                </div>
+
+                <div class="settings-actions">
+                  <button class="btn-primary" type="button" data-save="inventory">Save changes</button>
+                  <span class="save-confirm" data-confirm="inventory">Saved</span>
+                </div>
+              </section>
+
+              <!-- Pricing -->
+              <section class="settings-section" data-section="pricing" hidden>
+                <h2>Pricing</h2>
+                <p class="section-sub">Saved now — VAT will apply automatically once Sales has real transactions.</p>
+
+                <div class="settings-field">
+                  <div class="settings-field-label"><span>Currency symbol</span></div>
+                  <input type="text" id="pCurrency" class="settings-input field-tiny" maxlength="3" />
+                </div>
+                <div class="settings-field">
+                  <div class="settings-field-label"><span>Decimal places</span></div>
+                  <select class="settings-select field-tiny" id="pDecimals">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                  </select>
+                </div>
+                <div class="settings-field">
+                  <div class="settings-field-label"><span>VAT rate (%)</span></div>
+                  <input type="number" id="pVat" class="settings-input field-narrow" min="0" max="100" step="0.1" />
+                </div>
+
+                <div class="settings-actions">
+                  <button class="btn-primary" type="button" data-save="pricing">Save changes</button>
+                  <span class="save-confirm" data-confirm="pricing">Saved</span>
+                </div>
+              </section>
+
+              <!-- Security -->
+              <section class="settings-section" data-section="security" hidden>
+                <h2>Security</h2>
+                <p class="section-sub">
+                  Change the admin access code required on the registration
+                  page. Anyone creating a new admin account will need the
+                  new code.
+                </p>
+
+                <div class="settings-field stacked">
+                  <label for="secCurrentCode">Current access code</label>
+                  <input
+                    type="password"
+                    id="secCurrentCode"
+                    class="settings-input"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="settings-field stacked">
+                  <label for="secNewCode">New access code</label>
+                  <input
+                    type="password"
+                    id="secNewCode"
+                    class="settings-input"
+                    autocomplete="off"
+                    minlength="8"
+                  />
+                  <span class="settings-field-hint">At least 8 characters.</span>
+                </div>
+                <div class="settings-field stacked">
+                  <label for="secConfirmCode">Confirm new access code</label>
+                  <input
+                    type="password"
+                    id="secConfirmCode"
+                    class="settings-input"
+                    autocomplete="off"
+                    minlength="8"
+                  />
+                </div>
+
+                <div class="settings-error" id="secError" role="alert"></div>
+
+                <div class="settings-actions">
+                  <button class="btn-primary" type="button" data-save="security" id="secSaveBtn">Update access code</button>
+                  <span class="save-confirm" data-confirm="security">Saved</span>
+                </div>
+              </section>
+
+              <!-- Data -->
+              <section class="settings-section" data-section="data" hidden>
+                <h2>Data</h2>
+                <p class="section-sub">Back up your inventory or start over.</p>
+
+                <div class="data-row">
+                  <div>
+                    <div class="data-row-title">Export inventory</div>
+                    <div class="data-row-sub">Download all products as a file you can keep or re-import.</div>
+                  </div>
+                  <button class="btn-secondary" type="button" id="btnExport">Export to file</button>
+                </div>
+
+                <div class="data-row">
+                  <div>
+                    <div class="data-row-title">Import inventory</div>
+                    <div class="data-row-sub">Load products from a previously exported file.</div>
+                  </div>
+                  <button class="btn-secondary" type="button" id="btnImport">Import file</button>
+                  <input type="file" id="fileImport" accept="application/json,.json" hidden />
+                </div>
+
+                <div class="data-row danger">
+                  <div>
+                    <div class="data-row-title">Clear all saved data</div>
+                    <div class="data-row-sub">Removes every product and setting stored on this device. Cannot be undone.</div>
+                  </div>
+                  <button class="btn-danger" type="button" id="btnClear">Clear data</button>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <p class="footer-note">
+            Settings are saved on this device for now — they'll sync to your
+            account once a database is connected.
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="auth-store.js"></script>
+    <script src="settings-store.js"></script>
+    <script src="notifications.js"></script>
+    <script src="profile-menu.js"></script>
+    <script src="settings.js"></script>
+  </body>
+</html>
